@@ -8,7 +8,7 @@ library(sampling)
 library(matrixStats)
 library(Hmisc)
 
-dat<-read.csv("C:/Users/Uttara & Anand/Dropbox/analysis/test.csv") #input plot dataframe 'dat'
+dat<-read.csv("data.csv") #input plot dataframe 'dat'
 dat<-dat[complete.cases(dat),]
 dat$basal<-pi*(dat$diameter^2)/4
 #'dat' needs to be composed of the following columns:
@@ -87,7 +87,7 @@ for(k in sites){
   data$large<-ifelse(is.na(INDEX)==T,0,1)
   Nlarge<-sum(data$large)
   
-  ITER<-2 # No. of iterations to be used
+  ITER<-1000 # No. of iterations to be used
   use.iter<-1:ITER
   
   use.perc<-c(0,0.25,0.5,0.75,1)
